@@ -23,13 +23,18 @@ def ir_fibo():
 def atras():
     ventana_fibo.forget()
     ventana_info.forget()
+    ventana_ani.forget()
     inicial.pack(fill='both',expand=1)
-
+#funcion para informacion personal
 def ir_info():
     inicial.forget()
     ventana_info.pack(fill='both',expand=1)
+    
+# funcion para animacion
 
-
+def ir_ani():
+    inicial.forget()
+    ventana_info.pack(fill='both',expand=1)
 
 
 
@@ -45,7 +50,7 @@ ventana.title("interfaz grafica-steven sibaja")
 inicial= tkinter.Frame(ventana)# ventana principal
 ventana_fibo = tkinter.Frame(ventana) #ventana fibo
 ventana_info = tkinter.Frame(ventana)
-
+ventana_ani = tkinter.Frame(ventana)
 
 
  ####Label####
@@ -55,21 +60,24 @@ label_inicial = tkinter.Label(inicial,text= "botones de comando")# primer ventan
 label_inicial.pack(pady=20) # se utiliza para el espacio del texto hacai abajo
 label_info = tkinter.Label(ventana_info,text= "info")# primer ventana en aparecer de info
 label_info.pack(pady=20) # se utiliza pa
+label_ani = tkinter.Label(ventana_ani,text= "animacion")# primer ventana en aparecer de info
+label_ani.pack(pady=20) # se utiliza pa
 
     #####botones####
 
 boton_fibonacci= tkinter.Button(inicial,text= "fibonacci",command= ir_fibo, bg = "fuchsia") 
 boton_info= tkinter.Button(inicial,text= "informacion personal",command= ir_info, bg = "sky blue")
-boton_ani= tkinter.Button(inicial,text= "animacion", bg = "orange")
+boton_ani= tkinter.Button(inicial,text= "animacion",command= ir_ani, bg = "orange")
 boton_atras_fibo= tkinter.Button(ventana_fibo,text="atras", command= atras, bg="white")
 boton_atras_info= tkinter.Button(ventana_info,text="atras", command= atras, bg="white")
-
+boton_atras_ani= tkinter.Button(ventana_ani,text="atras", command= atras, bg="white")
 
 boton_fibonacci.pack(pady=10)
 boton_info.pack(pady=20)
 boton_ani.pack(pady=30)
 boton_atras_fibo.pack(pady=40)
 boton_atras_info.pack()
+boton_atras_ani.pack()
 inicial.pack()
 
 
